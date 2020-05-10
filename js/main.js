@@ -25,8 +25,6 @@ for (let i = 0; i < bombstQtd; i++) {
     map[bombx][bomby].setNumber('💣');
 }
 
-
-
 for (let i = 0; i < 10; i++) {
     for (let j = 0; j < 10; j++) {
         if (map[i][j].number === '💣') {
@@ -130,7 +128,7 @@ function getMousePos(canvas, evt) {
 
 canvas.onmousedown = (event) => {
     if (event.button == 0) {
-        const location = getMousePos(canvas, event);
+        const location = getMousePos(canvas, event);''
         let number = map[location.column][location.row].click();
         if (number == 0) {
             clearTile(location.column, location.row, true);
@@ -233,15 +231,6 @@ function clearTile(i, j, frist = false) {
         }
     }
 }
-
-document.addEventListener("keydown", (event) => {
-    map.forEach(column => {
-        column.forEach(tile => {
-            tile.click();
-        });
-    });
-});
-
 
 function update() {
     context.fillStyle = 'black';
